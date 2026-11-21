@@ -1,15 +1,23 @@
 {
-  "name": "Мое Милениче — Админ",
-  "short_name": "Милениче",
-  "description": "Резервации на груминг салонот Мое Милениче",
-  "start_url": "/admin",
+  "id": "/",
+  "name": "Мое Милениче — Груминг салон",
+  "short_name": "Мое Милениче",
+  "description": "Закажете термин за нега на вашето милениче — груминг салон во Скопје.",
+  "lang": "mk",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#FBF6EE",
   "theme_color": "#1F6F66",
+  "categories": ["lifestyle", "business"],
   "icons": [
-    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Закажи термин", "short_name": "Закажи", "url": "/zakazi", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
   ]
 }

@@ -11,6 +11,7 @@ import { Paw, Stars } from '../components/Brand';
 import useReveal from '../useReveal';
 import use3D from '../use3D';
 import Bubbles3D from '../components/Bubbles3D';
+import InstallCard from '../components/InstallCard';
 
 const ratingText = (lang) => BUSINESS.rating.toLocaleString(lang === 'en' ? 'en-GB' : 'mk-MK', { minimumFractionDigits: 1 });
 
@@ -398,6 +399,7 @@ export default function Home() {
         <Contact hours={hours} />
       </main>
       <SiteFooter />
+      <InstallCard />
     </>
   );
 }

@@ -7,6 +7,7 @@ import { Brand } from '../components/Brand';
 import { ThemeToggle } from '../theme';
 import Dialogs, { askConfirm, notify } from '../components/Dialogs';
 import { describe, notifySupported, useBookingAlerts } from '../lib/bookingAlerts';
+import InstallCard from '../components/InstallCard';
 
 const DAYS = ['Недела', 'Понеделник', 'Вторник', 'Среда', 'Четврток', 'Петок', 'Сабота'];
 const STATUS = {
@@ -266,6 +267,13 @@ function Panel({ email, onSignOut }) {
                     </span>
                     <input type="checkbox" checked={sound} onChange={(e) => setSound(e.target.checked)} />
                   </label>
+                  <div className="bell-row">
+                    <span>
+                      <strong>Апликација на телефон</strong>
+                      <small>Инсталирајте ја за известувања и на iPhone</small>
+                    </span>
+                    <InstallCard variant="button" />
+                  </div>
                   <p className="bell-note">Известувањата стигнуваат додека админ панелот е отворен — може и во друго јазиче или минимизиран прелистувач.</p>
                 </div>
               )}

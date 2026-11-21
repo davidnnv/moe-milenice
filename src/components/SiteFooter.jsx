@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLang } from '../lang';
 import { BUSINESS } from '../lib/config';
 import { Brand } from './Brand';
+import InstallCard from './InstallCard';
 
 export default function SiteFooter() {
   const { t, lang } = useLang();
@@ -19,6 +20,7 @@ export default function SiteFooter() {
               Instagram
             </a>
           )}
+          <InstallCard variant="button" />
           {BUSINESS.facebook && (
             <a href={BUSINESS.facebook} target="_blank" rel="noreferrer">
               Facebook

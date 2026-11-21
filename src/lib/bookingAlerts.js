@@ -41,7 +41,7 @@ async function systemNotification(title, body, tag) {
   const opts = { body, tag, renotify: true, icon: '/icons/icon-192.png', badge: '/icons/badge-96.png', data: { url: '/admin' } };
   try {
     // Phones (Android, installed iPhone app) only allow notifications through the service worker.
-    const reg = await navigator.serviceWorker?.getRegistration('/admin');
+    const reg = await navigator.serviceWorker?.getRegistration();
     if (reg) return reg.showNotification(title, opts);
     const n = new Notification(title, opts);
     n.onclick = () => {
@@ -78,9 +78,8 @@ export function useBookingAlerts(onNew) {
   onNewRef.current = onNew;
   soundRef.current = sound;
 
-  // Service worker: needed for notifications on phones; scoped to /admin only.
+  // Unlock the sound on the first tap (browsers block audio until the user interacts).
   useEffect(() => {
-    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js', { scope: '/admin' }).catch(() => {});
     const unlock = () => unlockSound();
     window.addEventListener('pointerdown', unlock, { once: true });
     window.addEventListener('keydown', unlock, { once: true });
